@@ -1,12 +1,13 @@
 {
   "name": "Gym-Accenture-00",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": " ./src/server.js",
   "author": "francisco <franc1sc1566@gmail.com>",
   "scripts": {
     "dev": "nodemon ./src/server",
     "lint": "eslint ./src/**/**.js",
-    "test": "jest"
+    "test": "jest",
+    "debug": "node --inspect=0.0.0.0:9229 ./src/server.js"
   },
   "license": "MIT",
   "devDependencies": {
