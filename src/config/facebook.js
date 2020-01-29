@@ -1,3 +1,1 @@
-module.exports = {
-    authToken: process.env.FACEBOOK_TOKEN
-}
+module.exports = process.env.FACEBOOK_TOKEN;
