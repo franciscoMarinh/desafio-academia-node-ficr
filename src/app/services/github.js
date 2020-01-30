@@ -1,6 +1,10 @@
-const Octokit = require("@octokit/rest");
+const axios = require("axios").default;
 const auth = require("../../config/github");
 
-module.exports = new Octokit({
-  auth
-});
+module.exports = axios.create({
+  baseURL: "https://api.github.com/graphql",
+  headers: {
+    Authorization: `bearer ${auth}`
+  }
+})
+
