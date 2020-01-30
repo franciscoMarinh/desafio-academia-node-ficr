@@ -10,9 +10,9 @@ query {
         location
         repositories(privacy: PUBLIC, first: 100, orderBy: {field: NAME, direction: ASC}) {
           nodes {
-            diskUsage
             name
             url
+            diskUsage
           }
         }
       }
