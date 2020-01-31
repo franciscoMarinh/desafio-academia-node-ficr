@@ -2,8 +2,6 @@ const axios = require("axios").default;
 const fbAcessToken = require("../../config/facebook");
 const gitAcessToken = require("../../config/github");
 
-console.log(process.env.GITHUB_TOKEN, "token")
-
 class AxiosController{
     async facebook(query){
       return await axios.get(`https://graph.facebook.com/v5.0/${query}&access_token=${fbAcessToken}`)
