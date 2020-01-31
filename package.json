@@ -7,7 +7,8 @@
     "dev": "nodemon ./src/server",
     "lint": "eslint ./src/**/**.js",
     "test": "jest",
-    "debug": "node --inspect=0.0.0.0:9229 ./src/server.js"
+    "debug": "node --inspect=0.0.0.0:9229 ./src/server.js",
+    "start": "node ./src/server"
   },
   "license": "MIT",
   "devDependencies": {
@@ -20,7 +21,6 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "@octokit/rest": "^16.40.0",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
