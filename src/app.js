@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const limiterApiRequest = require("./app/helpers/RateLimit");
 const mongoose = require("mongoose");
+const compression = require('compression')
 require("dotenv").config();
 
 class AppController {
@@ -14,8 +15,10 @@ class AppController {
   }
 
   middlewares() {
+    this.app.disable('x-powered-by');
     this.app.set("json spaces", 4);
     this.app.set("trust proxy", 1);
+    this.app.use(compression())
     this.app.use(cors());
     this.app.use(limiterApiRequest);
     this.app.use(express.json());
