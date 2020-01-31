@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const limiterApiRequest = require("./app/helpers/RateLimit");
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 require("dotenv").config();
 
 class AppController {
@@ -10,11 +10,11 @@ class AppController {
     this.app = express();
     this.middlewares();
     this.routes();
-    this.database()
+    this.database();
   }
 
   middlewares() {
-    this.app.set("json spaces", 4); // DELETE AFTER
+    this.app.set("json spaces", 4);
     this.app.set("trust proxy", 1);
     this.app.use(cors());
     this.app.use(limiterApiRequest);
@@ -30,7 +30,7 @@ class AppController {
     await mongoose.connect(process.env.DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
-    })
+    });
   }
 }
 

@@ -1,12 +1,4 @@
-// class ErrorHandle extends Error {
-//     constructor(statusCode, message) {
-//       super()
-//       this.statusCode = statusCode
-//       this.message = message
-//     }
-//   }
-
-exports.errorMiddleware = (err, req, res, next) => {
+exports.errorMiddleware = (err, req, res) => {
   if (!err.statusCode) err.statusCode = 500;
 
   const { statusCode, message } = err;

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon ./src/server",
     "lint": "eslint ./src/**/**.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles --runInBand",
     "debug": "node --inspect=0.0.0.0:9229 ./src/server.js",
     "start": "node ./src/server"
   },

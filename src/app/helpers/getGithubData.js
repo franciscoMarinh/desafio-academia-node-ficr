@@ -1,8 +1,7 @@
-const  { github } = require("../services/axios");
+const { github } = require("../services/axios");
 
 module.exports = async () => {
-  const query = 
-  `query { 
+  const query = `query { 
     viewer {
         login
         avatarUrl
@@ -19,20 +18,20 @@ module.exports = async () => {
           }
         }
       }
-  }`
+  }`;
 
-    const dataGithub = await github(query, "post")
-  
-    const filtedNodes = dataGithub.repositories.nodes
-      .sort((a, b) => {
-        if (a.diskUsage < b.diskUsage) return 1;
-        if (a.diskUsage > b.diskUsage) return -1;
-        return 0;
-      })
-      .splice(0, 3)
-  
-    return {
-      ...dataGithub,
-      repositories: filtedNodes
-    }
-  }
+  const dataGithub = await github(query, "post");
+
+  const filtedNodes = dataGithub.repositories.nodes
+    .sort((a, b) => {
+      if (a.diskUsage < b.diskUsage) return 1;
+      if (a.diskUsage > b.diskUsage) return -1;
+      return 0;
+    })
+    .splice(0, 3);
+
+  return {
+    ...dataGithub,
+    repositories: filtedNodes
+  };
+};
